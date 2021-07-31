@@ -9,8 +9,11 @@
 <body>
 
   <div id="app">
-    <p>{{ now }}</p>
-    <button v-on:click="time">現在時刻を表示する</button>
+    <ul>
+      <li v-for="pref in prefs">
+        {{ pref.name }}
+      </li>
+    </ul>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -18,7 +21,15 @@
     var app = new Vue ({
       el: "#app",
       data: {
-        now: "00:00:00"
+        prefs: [
+          { name: '北海道'},
+          { name: '青森県'},
+          { name: '岩手県'},
+          { name: '宮城県'},
+          { name: '秋田県'},
+          { name: '山形県'},
+          { name: '福島県'},
+        ]
       },
       methods: {
         time: function(e) {
@@ -30,6 +41,6 @@
       }
     });
   </script>
-  
+
 </body>
 </html>
