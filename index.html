@@ -13,6 +13,9 @@
     <p>{{ message }}</p>
     <button v-on:click="reverseMessage">メッセージ</button>
     <p>{{ sayHi() }}</p>
+    <p v-text="message"></p>
+    <a :[attribute]="url">風呂魂</a>
+    <a v-bind="googleObject">Google</a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -20,7 +23,13 @@
     new Vue({
       el: "#app",
       data: {
-        message: "サンプル"
+        message: "サンプル",
+        url: "http://furotama.com",
+        attribute: "href",
+        googleObject: {
+          href: "https://google.com",
+          number: 31
+        }
       },
       methods: {
         reverseMessage: function() {
