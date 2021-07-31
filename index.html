@@ -12,23 +12,23 @@
     <!-- マスタッシュ -->
     <p>{{ message }}</p>
     <button v-on:click="reverseMessage">メッセージ</button>
-  </div>
-
-  <div id="app2">
-    {{ message }}
+    <p>{{ sayHi() }}</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script>
-    var app = new Vue({
+    new Vue({
       el: "#app",
       data: {
         message: "サンプル"
       },
       methods: {
-        reverseMessage: function(){
-          this.massage =
-          this.massage.split(" ").reverse().join("")
+        reverseMessage: function() {
+          this.message =
+          this.message.split("").reverse().join("")
+        },
+        sayHi: function() {
+          return "Hi"
         }
       }
     });
