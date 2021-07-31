@@ -10,7 +10,8 @@
 
   <div id="app">
     <!-- マスタッシュ -->
-    {{ message }}
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">メッセージ</button>
   </div>
 
   <div id="app2">
@@ -23,6 +24,12 @@
       el: "#app",
       data: {
         message: "サンプル"
+      },
+      methods: {
+        reverseMessage: function(){
+          this.massage =
+          this.massage.split(" ").reverse().join("")
+        }
       }
     });
   </script>
