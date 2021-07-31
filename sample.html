@@ -9,7 +9,7 @@
 <body>
 
   <div id= "app">
-    <p>見えますか？</p>
+    <p v-if="error"> エラーです</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -17,7 +17,7 @@
     var app = new Vue ({
       el: "#app",
       data: {
-
+        error: true
       }
     });
   </script>
