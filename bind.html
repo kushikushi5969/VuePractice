@@ -18,10 +18,10 @@
 
   <div id="app">
     <h1 :class="classObject">Hello</h1>
-    <h1 :style="{color: textColor, 'background-color': bgColor}">Come on!</h1>
+    <h1 :style="styleObject">Come on!</h1>
+    <h1 :style="[styleObject, baseStyles]">What's up?!</h1>
     <button @click="isActive = !isActive">切り替え</button>
 
-    <h1 :class="[color, bg]">Hello</h1>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -30,15 +30,18 @@
       el: "#app",
       data: {
         isActive: true,
-        color: 'red',
-        bg: 'bg-blue',
-        textColor: 'red',
-        bgColor: 'blue'
-
+        styleObject: {
+          color: 'red',
+          'background-color': 'blue'
+        },
+        baseStyles: {
+          fontSize: '60px'
+        }
       },
       computed: {
         classObject: function() {
           return {
+            // 各クラス毎のcssをreturnで返している
             red: this.isActive,
             'bg-blue': !this.isActive
           }
