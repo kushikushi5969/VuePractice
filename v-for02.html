@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-for02,key属性の必要性</title>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+      <div v-for="fruit in fruits" v-bind:key="fruit">
+        <p>{{ fruit }}</p>
+        <input type="text">
+      </div>
+    </ul>
+    <button @click="remove">先頭を削除</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        fruits: ['りんご', 'バナナ', 'ぶどう']
+      },
+      methods: {
+        remove: function() {
+          this.fruits.shift()
+        }
+      }
+    });
+  </script>
+</body>
+</html>
