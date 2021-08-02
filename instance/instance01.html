@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vueインスタンス</title>
+</head>
+<body>
+
+  <div id="app1">
+    <p v-if="ok">インスタンス１</p>
+    <p v-else>インスタンス２から変えました</p>
+  </div>
+
+  <div id="app2">
+    <p>{{ message }}</p>
+    <button @click="changeMessage1">インスタンス１のmessageをmethodで変更</button>
+    <button @click="vm1.ok = !vm1.ok">インスタンス１のmessageをtrue or falseで変更</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    var vm1 = new Vue({
+      el: "#app1",
+      data: {
+        ok: true
+      }
+    })
+
+    var vm2 = new Vue({
+      el: "#app2",
+      data: {
+        message: 'インスタンス２'
+      },
+      methods: {
+        changeMessage1: function() {
+          vm1.ok = !vm1.ok
+        }
+      }
+    })
+  </script>
+</body>
+</html>
