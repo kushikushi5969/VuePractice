@@ -14,7 +14,11 @@
     <button @click="message = 'ボタンから変更' ">変更</button>
   </div>
 
-  <div id="app2">
+  <div id="app2"></div>
+  <div id="app4">
+    <h1>Hello, {{ name }}</h1>
+    <button @click="name = '太郎さん" >名前を変更</button>
+    <button @click="destroy">インスタンスを破壊</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -35,11 +39,46 @@
         return createElement('h1', 'こんにちは、' + this.name);
       }
     }).$mount('#app2')
-
     var dir = document.createElement('div');
     console.log(dir)
     console.log(document)
     console.dir(document)
+
+    new Vue({
+      el: "#app4",
+      data: {
+        name: 'くっしー',
+      },
+      beforeCreate: function() {
+        console.log('beforeCreate');
+      },
+      created: function() {
+        console.log('created');
+      },
+      beforeMount: function() {
+        console.log('beforeMount');
+      },
+      mounted: function() {
+        console.log('mounted');
+      },
+      beforeUpdate: function() {
+        console.log('beforeUpdate');
+      },
+      updated: function() {
+        console.log('updated');
+      },
+      beforeDestroy: function() {
+        console.log('beforeDestroy');
+      },
+      destroyed: function() {
+        console.log('destroyed');
+      },
+      method: {
+        destroy: function() {
+          this.$destroy()
+        }
+      }
+    })
   </script>
 </body>
 </html>
