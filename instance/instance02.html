@@ -15,9 +15,10 @@
   </div>
 
   <div id="app2"></div>
-  <div id="app4">
+
+  <div id="app3">
     <h1>Hello, {{ name }}</h1>
-    <button @click="name = '太郎さん" >名前を変更</button>
+    <button @click="name = '太郎さん' ">名前を変更</button>
     <button @click="destroy">インスタンスを破壊</button>
   </div>
 
@@ -40,12 +41,12 @@
       }
     }).$mount('#app2')
     var dir = document.createElement('div');
-    console.log(dir)
-    console.log(document)
-    console.dir(document)
+    console.log(dir);
+    console.log(document);
+    console.dir(document);
 
     new Vue({
-      el: "#app4",
+      el: '#app3',
       data: {
         name: 'くっしー',
       },
@@ -73,12 +74,13 @@
       destroyed: function() {
         console.log('destroyed');
       },
-      method: {
+      methods: {
         destroy: function() {
           this.$destroy()
         }
       }
     })
+
   </script>
 </body>
 </html>
