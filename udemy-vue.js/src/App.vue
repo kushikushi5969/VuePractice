@@ -2,8 +2,9 @@
   <div>
     <LikeHeader header-text="hello">
       <h2>みなさん</h2>
-      <template v-slot:title>
+      <template v-slot:title="slotProps">
         <h1>こんにちは</h1>
+        <h2>{{ slotProps }}</h2>
       </template>
       <h3>初めまして</h3>
       <p>よろしくお願いします</p>
