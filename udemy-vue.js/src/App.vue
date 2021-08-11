@@ -87,7 +87,7 @@
       <label for="paid">有料</label>
 
       <p>開催場所</p>
-      <select v-model="eventData.location" multiple>
+      <select v-model="eventData.location">
         <option
           v-for="location in locations"
           :key="location"
