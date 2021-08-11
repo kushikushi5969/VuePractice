@@ -4,6 +4,9 @@ import LikeNumber from './components/LikeNumber.vue'
 
 Vue.config.productionTip = false
 Vue.component('LikeNumber', LikeNumber);
+Vue.filter("upperCase", function(value) {
+  return value.toUpperCase();
+})
 // Vue.directive('border', {
 //   bind(el, binding, vnode) {
 //     // ディレクティブが初めて対象の要素に紐付いた時
