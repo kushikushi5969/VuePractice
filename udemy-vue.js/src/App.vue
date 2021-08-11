@@ -12,13 +12,11 @@
     </keep-alive>
     <div style="padding: 10rem">
       <h2>イベントのフォーム</h2>
-      <label for="title">タイトル</label>
-      <input
-      id="title"
-      type="text"
-      v-model.lazy="eventData.title"
-      >
-      <pre>{{ eventData.title }}</pre>
+      <EventTitle v-model="eventData.title"></EventTitle>
+      <!-- <EventTitle
+        :value="eventData.title"
+        @input="eventData.title = $event"
+      ></EventTitle> -->
       <label for="maxNumber">最大人数</label>
       <input
       id="maxNumber"
@@ -104,6 +102,8 @@
 import LikeHeader from "./components/LikeHeader";
 import About from "./components/About";
 import Home from "./components/Home";
+import EventTitle from "./components/EventTitle";
+
 
 
 export default {
@@ -127,6 +127,7 @@ export default {
     LikeHeader: LikeHeader,
     About,
     Home,
+    EventTitle
   }
 };
 </script>
